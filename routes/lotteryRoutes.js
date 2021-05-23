@@ -6,7 +6,6 @@ require("../models/Lottery");
 
 //Now, this call won't fail because Survey has been added as a schema.
 const Lottery = mongoose.model("Lottery");
-// const FeedBack = mongoose.model("feedBack");
 
 module.exports = (app) => {
     app.get("/api/lotteries", requireLogin, async (req, res) => {

@@ -1,10 +1,16 @@
 const mongoose = require("mongoose");
 require("../models/Lottery");
 const Lottery = mongoose.model("Lottery");
+require("../models/User");
+const User = mongoose.model("User");
 const requireLogin = require("../middlewares/requireLogin");
 module.exports = (app) => {
     app.post("/api/participatingRoutes", requireLogin, (req, res) => {
         const { lotteryId } = req.body;
+        const userId = "60014c2e1d576c2d5caa9cb1";
+        User.findById(userId).then((user, err) => {
+            user.credits += lottery.Entry_Fee;
+        });
         Lottery.findById(lotteryId).then((lottery, err) => {
             if (lottery) {
                 lottery.Participants_Number--;

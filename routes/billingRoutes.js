@@ -9,11 +9,11 @@ module.exports = (app) => {
             .create({
                 amount: 500,
                 currency: "INR",
-                description: "₹5 for 5 email credits",
+                description: "₹5 for 50 email credits",
                 source: req.body.id,
             })
             .then((charge) => {
-                req.user.credits += 5; //add credits
+                req.user.credits += 50; //add credits
                 req.user.save().then((user) => {
                     res.send(user);
                 });
